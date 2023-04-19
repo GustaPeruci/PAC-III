@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://tilsetGround/new_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Basic Furniture.png" type="Texture" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://pumpkin_seedpack.tscn" type="PackedScene" id=15]
 [ext_resource path="res://corn_seedpack.tscn" type="PackedScene" id=16]
 [ext_resource path="res://lettuce_seedpack.tscn" type="PackedScene" id=17]
-[ext_resource path="res://player.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 12, 56, 52, 56, 64, 60, 56, 80, 8, 80, 0, 60 )
@@ -965,6 +964,3 @@ position = Vector2( 267, 215 )
 
 [node name="lettuce_seedpack" parent="." instance=ExtResource( 17 )]
 position = Vector2( 286, 215 )
-
-[node name="Player" parent="." instance=ExtResource( 18 )]
-position = Vector2( 251, 257 )
