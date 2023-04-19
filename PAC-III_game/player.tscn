@@ -776,7 +776,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=166]
-extents = Vector2( 9, 11.5 )
+extents = Vector2( 4, 7 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 50, 50 )
@@ -827,5 +827,5 @@ animation = "baixo"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 6 )
+position = Vector2( 0, 8 )
 shape = SubResource( 166 )
