@@ -1,4 +1,5 @@
-extends Area2D
+extends KinematicBody2D
+
 
 export var speed = 400
 var screen_size
@@ -6,9 +7,8 @@ var screen_size
 func _ready():
 	screen_size = get_viewport_rect().size
 
-
-
-func _process(delta):
+func _physics_process(delta):
+	move_and_collide(Vector2(0,0))
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
