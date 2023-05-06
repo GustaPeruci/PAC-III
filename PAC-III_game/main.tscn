@@ -8,6 +8,7 @@
 [node name="Main" type="Node"]
 
 [node name="Scenario" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1, -2 )
 z_index = 2
 
 [node name="ui_canvas" type="CanvasLayer" parent="."]
