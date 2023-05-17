@@ -1,0 +1,35 @@
+## Abóbora
+
+#### Nome científico: Curcubita pepo
+
+---
+
+###### Informações Nutricionais
+
+Para uma porção de 100g:
+
+- Caloria: 20kcal
+- Gordura: 0.1g
+- Colesterol: 0mg
+- Sódio: 1mg
+- Carboidrato: 4.9g
+- Proteína: 0.7g
+- Cálcio: 15mg
+- Ferro: 0.6mg
+- Potássio: 230mg
+- Cafeína: 0mg
+- Vitaminas:
+  - A
+  - B1
+  - B6
+  - C
+  - E
+
+---
+
+###### Benefícios
+
+Ajuda a diminuir as chances de doenças cardíacas, a regular os batimentos cardíacos e a baixa pressão sanguínea assim como colesterol; também ajuda em dietas emagrecedoras.
+Ajuda a combater doenças nos olhos e cancêr de pele. Aumenta a eficiência do sistema imunológico, melhoram a visão e promove a melhora da pele.
+
+---
