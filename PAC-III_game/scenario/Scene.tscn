@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://tilsetGround/new_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Basic Furniture.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://pumpkin_seedpack.tscn" type="PackedScene" id=15]
 [ext_resource path="res://corn_seedpack.tscn" type="PackedScene" id=16]
 [ext_resource path="res://lettuce_seedpack.tscn" type="PackedScene" id=17]
+[ext_resource path="res://player.tscn" type="PackedScene" id=18]
+[ext_resource path="res://letter.tscn" type="PackedScene" id=19]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 12, 56, 52, 56, 64, 60, 56, 80, 8, 80, 0, 60 )
@@ -954,19 +956,25 @@ position = Vector2( 488, 231 )
 position = Vector2( 488, 215 )
 
 [node name="tomato_seedpack" parent="." instance=ExtResource( 13 )]
-position = Vector2( 248, 189 )
+position = Vector2( 195, 176 )
 
 [node name="carrot_seedpack" parent="." instance=ExtResource( 12 )]
-position = Vector2( 267, 189 )
+position = Vector2( 112, 283 )
 
 [node name="strawberry_seedpack" parent="." instance=ExtResource( 14 )]
-position = Vector2( 286, 189 )
+position = Vector2( 295, 126 )
 
 [node name="pumpkin_seedpack" parent="." instance=ExtResource( 15 )]
-position = Vector2( 248, 214 )
+position = Vector2( 193, 238 )
 
 [node name="corn_seedpack" parent="." instance=ExtResource( 16 )]
-position = Vector2( 267, 215 )
+position = Vector2( 273, 202 )
 
 [node name="lettuce_seedpack" parent="." instance=ExtResource( 17 )]
-position = Vector2( 286, 215 )
+position = Vector2( 286, 297 )
+
+[node name="Player" parent="." instance=ExtResource( 18 )]
+position = Vector2( 138, 158 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 19 )]
+position = Vector2( 184, 88 )
