@@ -18,5 +18,5 @@ script = ExtResource( 4 )
 visible = false
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, 10 )
+position = Vector2( 134, 157 )
 z_index = 3
