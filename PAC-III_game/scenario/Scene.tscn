@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://tilsetGround/new_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Basic Furniture.png" type="Texture" id=2]
@@ -17,7 +17,11 @@
 [ext_resource path="res://pumpkin_seedpack.tscn" type="PackedScene" id=15]
 [ext_resource path="res://corn_seedpack.tscn" type="PackedScene" id=16]
 [ext_resource path="res://lettuce_seedpack.tscn" type="PackedScene" id=17]
+[ext_resource path="res://gatinho sentadinho.tscn" type="PackedScene" id=18]
 [ext_resource path="res://letter.tscn" type="PackedScene" id=19]
+[ext_resource path="res://chicken.tscn" type="PackedScene" id=20]
+[ext_resource path="res://cow.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenario/Scene.gd" type="Script" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 46, 64, 46, 64, 60, 56, 80, 8, 80, 0, 60 )
@@ -857,8 +861,12 @@ points = PoolVector2Array( 2, 2, 14, 2, 14, 14, 2, 14 )
 } ]
 23/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=64]
+extents = Vector2( 10, 16.5 )
+
 [node name="Scenario" type="Node2D"]
 position = Vector2( 922, -59 )
+script = ExtResource( 22 )
 
 [node name="barriers" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -1031,3 +1039,46 @@ position = Vector2( 286, 297 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 19 )]
 position = Vector2( 182, 88 )
+
+[node name="chicken" parent="." instance=ExtResource( 20 )]
+position = Vector2( 732, 52 )
+z_index = 99
+
+[node name="chicken2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 710, 76 )
+z_index = 99
+
+[node name="chicken3" parent="." instance=ExtResource( 20 )]
+position = Vector2( 746, 111 )
+z_index = 99
+
+[node name="chicken4" parent="." instance=ExtResource( 20 )]
+position = Vector2( 744, 84 )
+z_index = 99
+
+[node name="chicken5" parent="." instance=ExtResource( 20 )]
+position = Vector2( 697, 114 )
+z_index = 99
+
+[node name="cow" parent="." instance=ExtResource( 21 )]
+position = Vector2( 581, 60 )
+z_index = 99
+
+[node name="cow2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 580, 108 )
+z_index = 99
+
+[node name="gatinho sentadinho" parent="." instance=ExtResource( 18 )]
+position = Vector2( 108, 100 )
+z_index = 99
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 37, 63 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 99, 29.5 )
+z_index = 99
+shape = SubResource( 64 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
