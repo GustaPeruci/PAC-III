@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 export var speed = 400
 var screen_size
+onready var ui_canvas = $"../ui_canvas"
 
 func _ready():
 	screen_size = get_viewport_rect().size

@@ -1,0 +1,755 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Character/inventory.png" type="Texture" id=1]
+[ext_resource path="res://Slot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Infos.gd" type="Script" id=3]
+[ext_resource path="res://Character/ToolBar.png" type="Texture" id=4]
+[ext_resource path="res://Character/ArrowNext.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 316.5, 50.25 )
+
+[node name="InventoryToolbar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -99.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Inventory" type="TextureRect" parent="."]
+visible = false
+margin_top = 50.0
+margin_right = 606.0
+margin_bottom = 382.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="Container" type="GridContainer" parent="Inventory"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -83.0
+margin_top = -151.0
+margin_right = 277.0
+margin_bottom = 149.0
+grow_horizontal = 0
+rect_min_size = Vector2( 360, 300 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Slot1" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="Inventory/Container/Slot1" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="amount" parent="Inventory/Container/Slot1" index="1"]
+margin_left = -20.98
+margin_top = -6.02
+margin_right = 19.02
+margin_bottom = 7.98
+
+[node name="Slot2" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_right = 120.0
+margin_bottom = 60.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="sprite" parent="Inventory/Container/Slot2" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="amount" parent="Inventory/Container/Slot2" index="1"]
+margin_left = -23.98
+margin_top = -8.02
+margin_right = 16.02
+margin_bottom = 5.98
+
+[node name="Slot3" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_right = 180.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="Inventory/Container/Slot3" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="amount" parent="Inventory/Container/Slot3" index="1"]
+margin_left = -27.98
+margin_right = 12.02
+
+[node name="Slot4" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_right = 240.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="Inventory/Container/Slot4" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot5" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 300.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="Inventory/Container/Slot5" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot6" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="Inventory/Container/Slot6" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot7" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 60.0
+margin_right = 60.0
+margin_bottom = 120.0
+
+[node name="sprite" parent="Inventory/Container/Slot7" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot8" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_top = 60.0
+margin_right = 120.0
+margin_bottom = 120.0
+
+[node name="sprite" parent="Inventory/Container/Slot8" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot9" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 60.0
+margin_right = 180.0
+margin_bottom = 120.0
+
+[node name="sprite" parent="Inventory/Container/Slot9" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot10" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_top = 60.0
+margin_right = 240.0
+margin_bottom = 120.0
+
+[node name="sprite" parent="Inventory/Container/Slot10" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot11" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 60.0
+margin_right = 300.0
+margin_bottom = 120.0
+
+[node name="sprite" parent="Inventory/Container/Slot11" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot12" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 60.0
+margin_right = 360.0
+margin_bottom = 120.0
+
+[node name="sprite" parent="Inventory/Container/Slot12" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot13" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 120.0
+margin_right = 60.0
+margin_bottom = 180.0
+
+[node name="sprite" parent="Inventory/Container/Slot13" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot14" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_top = 120.0
+margin_right = 120.0
+margin_bottom = 180.0
+
+[node name="sprite" parent="Inventory/Container/Slot14" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot15" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 120.0
+margin_right = 180.0
+margin_bottom = 180.0
+
+[node name="sprite" parent="Inventory/Container/Slot15" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot16" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_top = 120.0
+margin_right = 240.0
+margin_bottom = 180.0
+
+[node name="sprite" parent="Inventory/Container/Slot16" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot17" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 120.0
+margin_right = 300.0
+margin_bottom = 180.0
+
+[node name="sprite" parent="Inventory/Container/Slot17" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot18" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 120.0
+margin_right = 360.0
+margin_bottom = 180.0
+
+[node name="sprite" parent="Inventory/Container/Slot18" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot19" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 180.0
+margin_right = 60.0
+margin_bottom = 240.0
+
+[node name="sprite" parent="Inventory/Container/Slot19" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot20" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_top = 180.0
+margin_right = 120.0
+margin_bottom = 240.0
+
+[node name="sprite" parent="Inventory/Container/Slot20" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot21" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 180.0
+margin_right = 180.0
+margin_bottom = 240.0
+
+[node name="sprite" parent="Inventory/Container/Slot21" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot22" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_top = 180.0
+margin_right = 240.0
+margin_bottom = 240.0
+
+[node name="sprite" parent="Inventory/Container/Slot22" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot23" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 180.0
+margin_right = 300.0
+margin_bottom = 240.0
+
+[node name="sprite" parent="Inventory/Container/Slot23" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot24" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 180.0
+margin_right = 360.0
+margin_bottom = 240.0
+
+[node name="sprite" parent="Inventory/Container/Slot24" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot25" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 240.0
+margin_right = 60.0
+margin_bottom = 300.0
+
+[node name="sprite" parent="Inventory/Container/Slot25" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot26" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_top = 240.0
+margin_right = 120.0
+margin_bottom = 300.0
+
+[node name="sprite" parent="Inventory/Container/Slot26" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot27" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 240.0
+margin_right = 180.0
+margin_bottom = 300.0
+
+[node name="sprite" parent="Inventory/Container/Slot27" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot28" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_top = 240.0
+margin_right = 240.0
+margin_bottom = 300.0
+
+[node name="sprite" parent="Inventory/Container/Slot28" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot29" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_top = 240.0
+margin_right = 300.0
+margin_bottom = 300.0
+
+[node name="sprite" parent="Inventory/Container/Slot29" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot30" parent="Inventory/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 240.0
+margin_right = 360.0
+margin_bottom = 300.0
+
+[node name="sprite" parent="Inventory/Container/Slot30" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="ToolBar" type="TextureRect" parent="."]
+margin_left = 85.0
+margin_top = 474.0
+margin_right = 719.0
+margin_bottom = 574.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="Container" type="GridContainer" parent="ToolBar"]
+anchor_left = 0.30625
+anchor_top = 0.404297
+anchor_right = 0.30625
+anchor_bottom = 0.404297
+margin_left = -174.163
+margin_top = -10.4297
+margin_right = 425.837
+margin_bottom = 49.5703
+grow_horizontal = 0
+rect_min_size = Vector2( 360, 60 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 10
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Slot1" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot1" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="amount" parent="ToolBar/Container/Slot1" index="1"]
+margin_left = -20.98
+margin_top = -6.02
+margin_right = 19.02
+margin_bottom = 7.98
+
+[node name="Slot2" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_right = 120.0
+margin_bottom = 60.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="sprite" parent="ToolBar/Container/Slot2" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="amount" parent="ToolBar/Container/Slot2" index="1"]
+margin_left = -23.98
+margin_top = -8.02
+margin_right = 16.02
+margin_bottom = 5.98
+
+[node name="Slot3" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_right = 180.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot3" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="amount" parent="ToolBar/Container/Slot3" index="1"]
+margin_left = -27.98
+margin_right = 12.02
+
+[node name="Slot4" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_right = 240.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot4" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot5" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 240.0
+margin_right = 300.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot5" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot6" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_right = 360.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot6" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot7" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 360.0
+margin_right = 420.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot7" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot8" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 420.0
+margin_right = 480.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot8" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot9" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 480.0
+margin_right = 540.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot9" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Slot10" parent="ToolBar/Container" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 540.0
+margin_right = 600.0
+margin_bottom = 60.0
+
+[node name="sprite" parent="ToolBar/Container/Slot10" index="0"]
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = 35.0
+
+[node name="Infos" type="NinePatchRect" parent="."]
+anchor_left = 0.035
+anchor_top = 0.163
+anchor_right = 0.287
+anchor_bottom = 0.572
+margin_left = -0.235001
+margin_top = 0.199997
+margin_right = 0.072998
+margin_bottom = -0.200012
+script = ExtResource( 3 )
+
+[node name="SeedName" type="RichTextLabel" parent="Infos"]
+anchor_top = 0.041
+anchor_right = 1.0
+anchor_bottom = 0.118
+margin_top = -0.0450001
+margin_right = 1.0
+margin_bottom = 0.0899982
+
+[node name="SeedInfo" type="RichTextLabel" parent="Infos"]
+anchor_top = 0.163
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.0649986
+margin_bottom = -31.0
+
+[node name="NextButton" type="Button" parent="Infos"]
+visible = false
+margin_left = 110.0
+margin_top = 220.0
+margin_right = 152.0
+margin_bottom = 256.0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="PreviewtButton" type="Button" parent="Infos"]
+visible = false
+margin_left = 75.0
+margin_top = 256.0
+margin_right = 117.0
+margin_bottom = 292.0
+rect_rotation = 180.0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="AreaToolbar" type="Area2D" parent="."]
+position = Vector2( 85, 474 )
+
+[node name="CollisionToolbar" type="CollisionShape2D" parent="AreaToolbar"]
+position = Vector2( 316.5, 50.75 )
+shape = SubResource( 1 )
+
+[connection signal="pressed" from="Infos/NextButton" to="Infos" method="_on_NextButton_pressed"]
+[connection signal="pressed" from="Infos/PreviewtButton" to="Infos" method="_on_PreviewtButton_pressed"]
+
+[editable path="Inventory/Container/Slot1"]
+[editable path="Inventory/Container/Slot2"]
+[editable path="Inventory/Container/Slot3"]
+[editable path="Inventory/Container/Slot4"]
+[editable path="Inventory/Container/Slot5"]
+[editable path="Inventory/Container/Slot6"]
+[editable path="Inventory/Container/Slot7"]
+[editable path="Inventory/Container/Slot8"]
+[editable path="Inventory/Container/Slot9"]
+[editable path="Inventory/Container/Slot10"]
+[editable path="Inventory/Container/Slot11"]
+[editable path="Inventory/Container/Slot12"]
+[editable path="Inventory/Container/Slot13"]
+[editable path="Inventory/Container/Slot14"]
+[editable path="Inventory/Container/Slot15"]
+[editable path="Inventory/Container/Slot16"]
+[editable path="Inventory/Container/Slot17"]
+[editable path="Inventory/Container/Slot18"]
+[editable path="Inventory/Container/Slot19"]
+[editable path="Inventory/Container/Slot20"]
+[editable path="Inventory/Container/Slot21"]
+[editable path="Inventory/Container/Slot22"]
+[editable path="Inventory/Container/Slot23"]
+[editable path="Inventory/Container/Slot24"]
+[editable path="Inventory/Container/Slot25"]
+[editable path="Inventory/Container/Slot26"]
+[editable path="Inventory/Container/Slot27"]
+[editable path="Inventory/Container/Slot28"]
+[editable path="Inventory/Container/Slot29"]
+[editable path="Inventory/Container/Slot30"]
+[editable path="ToolBar/Container/Slot1"]
+[editable path="ToolBar/Container/Slot2"]
+[editable path="ToolBar/Container/Slot3"]
+[editable path="ToolBar/Container/Slot4"]
+[editable path="ToolBar/Container/Slot5"]
+[editable path="ToolBar/Container/Slot6"]
+[editable path="ToolBar/Container/Slot7"]
+[editable path="ToolBar/Container/Slot8"]
+[editable path="ToolBar/Container/Slot9"]
+[editable path="ToolBar/Container/Slot10"]

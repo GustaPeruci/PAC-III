@@ -3,12 +3,18 @@ extends StaticBody2D
 var plant = Global.plantselected
 var plantgrowing = false
 var plant_grow = false
+var main 
+var ui_canvas
+var texture
 
+func _ready():
+	main = get_parent().get_parent()
+	ui_canvas = main.get_node("ui_canvas")
+	
 func _physics_process(delta):
 	if plantgrowing ==  false:
 		plant = Global.plantselected
 		
-
 
 func _on_Area2D_area_entered(area):
 	if not plantgrowing:
@@ -158,31 +164,43 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				plantgrowing = false
 				plant_grow = false
 				$plant.play("none")
+				texture = ResourceLoader.load('res://Crops/16X16/tile006.png') as Texture
+				ui_canvas.add_item_inventory(texture, '', plant)
 			if plant == 2:
 				Global.numoftomatos += 1
 				plantgrowing = false
 				plant_grow = false
 				$plant.play("none")
+				texture = ResourceLoader.load('res://Crops/16X16/tile013.png') as Texture
+				ui_canvas.add_item_inventory(texture, '', plant)
 			if plant == 3:
 				Global.numofstrawberry += 1
 				plantgrowing = false
 				plant_grow = false
 				$plant.play("none")
+				texture = ResourceLoader.load('res://Crops/16X16/tile020.png') as Texture				
+				ui_canvas.add_item_inventory(texture, '', plant)
 			if plant == 4:
 				Global.numofpumpkin += 1
 				plantgrowing = false
 				plant_grow = false
 				$plant.play("none")
+				texture = ResourceLoader.load('res://Crops/16X16/tile027.png') as Texture								
+				ui_canvas.add_item_inventory(texture, '', plant)
 			if plant == 5:
 				Global.numofcorns += 1
 				plantgrowing = false
 				plant_grow = false
 				$plant.play("none")
+				texture = ResourceLoader.load('res://Crops/16X16/tile034.png') as Texture								
+				ui_canvas.add_item_inventory(texture, '', plant)
 			if plant == 6:
 				Global.numoflettuces += 1
 				plantgrowing = false
 				plant_grow = false
 				$plant.play("none")
+				texture = ResourceLoader.load('res://Crops/16X16/tile062.png') as Texture								
+				ui_canvas.add_item_inventory(texture, '', plant)
 			else:
 				pass
 		print("number of carriots:" + str(Global.numofcarrots))
