@@ -1,0 +1,134 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fotoFundo.png" type="Texture" id=2]
+[ext_resource path="res://enter.png" type="Texture" id=3]
+[ext_resource path="res://teclado.png" type="Texture" id=4]
+[ext_resource path="res://mouse.png" type="Texture" id=5]
+[ext_resource path="res://ControlsScreen.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="ControlsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="FotoFundo" type="Sprite" parent="."]
+position = Vector2( 351, 266 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="FotoFundo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -945.0
+margin_top = -452.5
+margin_right = -945.0
+margin_bottom = -452.5
+color = Color( 0.054902, 0.054902, 0.054902, 0.286275 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -160.0
+margin_top = 29.0
+margin_right = 160.0
+margin_bottom = 91.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Controls"
+
+[node name="Teclado" type="Sprite" parent="."]
+position = Vector2( 675.75, 153.5 )
+scale = Vector2( 0.23806, 0.173469 )
+texture = ExtResource( 4 )
+
+[node name="Enter" type="Sprite" parent="Teclado"]
+position = Vector2( -44.2084, 775.833 )
+scale = Vector2( 1.1524, 1.28052 )
+texture = ExtResource( 3 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 47.0
+margin_top = 149.0
+margin_right = 522.0
+margin_bottom = 174.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Mover a personagem:"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 33.0
+margin_top = 282.0
+margin_right = 583.0
+margin_bottom = 307.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Interagir com objetos:"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 37.0
+margin_top = 449.0
+margin_right = 487.0
+margin_bottom = 474.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Plantar e colher:"
+
+[node name="Mouse" type="Sprite" parent="."]
+position = Vector2( 676.5, 452.375 )
+scale = Vector2( 0.212891, 0.200684 )
+texture = ExtResource( 5 )
+
+[node name="ReturnButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -110.0
+margin_top = -63.0
+margin_right = 110.0
+margin_bottom = -23.0
+theme = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.92549, 0.407843, 0.407843, 1 )
+custom_colors/font_color_pressed = Color( 0.960784, 0.282353, 0.282353, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+text = "Return Menu"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_ReturnButton_pressed"]
