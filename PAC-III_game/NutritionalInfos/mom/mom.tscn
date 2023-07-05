@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tilesets/dialogue_box.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends CanvasLayer
+
+export(String, FILE, \"*.json\") var d_file
+
+var dialogue = []
+var current_dialogue_id = 0
+var d_active = false
+
+func _ready():
+	$NinePatchRect.visible = false
+	
+func start():
+	if d_active:
+		return
+	d_active = true
+	$NinePatchRect.visible = true
+	dialogue = load_dialogue()
+	current_dialogue_id = -1
+	next_script()
+	
+func load_dialogue():
+	var file = File.new()
+	if file.file_exists(d_file):
+		file.open(d_file, file.READ)
+		return parse_json(file.get_as_text())
+
+func _input(event):
+	if not d_active:
+		return
+	if event.is_action_pressed(\"ui_accept\"):
+		next_script()
+
+func next_script():
+	current_dialogue_id += 1
+	
+	if current_dialogue_id >= len(dialogue):
+		$Timer.start()
+		$NinePatchRect.visible = false
+		return 
+	
+	$NinePatchRect/Name.text = dialogue[current_dialogue_id]['name']
+	$NinePatchRect/Chat.text = dialogue[current_dialogue_id]['text']
+
+func _on_Timer_timeout():
+	d_active = false
+"
+
+[sub_resource type="DynamicFont" id=1]
+size = 85
+
+[sub_resource type="DynamicFont" id=2]
+
+[node name="Dialogue" type="CanvasLayer"]
+script = SubResource( 3 )
+d_file = "res://NutritionalInfos/mom/json/dialogue_mom.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = -1.0
+margin_top = 381.0
+margin_right = 824.0
+margin_bottom = 575.0
+texture = ExtResource( 1 )
+region_rect = Rect2( 1.72697, 0.185218, 27.6223, 31.542 )
+patch_margin_left = 2
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 33.0
+margin_top = 19.0
+margin_right = 90.0
+margin_bottom = 45.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = SubResource( 1 )
+text = "Name"
+
+[node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 69.0
+margin_top = 55.0
+margin_right = 793.0
+margin_bottom = 171.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = SubResource( 2 )
+text = "Chat"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

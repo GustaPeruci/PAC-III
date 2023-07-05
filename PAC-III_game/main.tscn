@@ -1,21 +1,355 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenario/Scene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Inventory.tscn" type="PackedScene" id=3]
+[ext_resource path="res://InventoryToolbar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui_canvas.gd" type="Script" id=4]
+[ext_resource path="res://Seedpack.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Crops/16X16/tile007.png" type="Texture" id=7]
+[ext_resource path="res://Crops/16X16/tile014.png" type="Texture" id=8]
+[ext_resource path="res://Crops/16X16/tile056.png" type="Texture" id=9]
+[ext_resource path="res://Crops/16X16/tile028.png" type="Texture" id=10]
+[ext_resource path="res://Crops/16X16/tile021.png" type="Texture" id=11]
+[ext_resource path="res://Crops/16X16/tile000.png" type="Texture" id=12]
 
 [node name="Main" type="Node"]
 
 [node name="Scenario" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1, -2 )
 z_index = 2
+z_as_relative = false
 
 [node name="ui_canvas" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
 
-[node name="Inventory" parent="ui_canvas" instance=ExtResource( 3 )]
+[node name="Color" type="ColorRect" parent="ui_canvas"]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.968627, 0.823529, 0.0431373, 0.368627 )
+
+[node name="InventoryToolbar" parent="ui_canvas" instance=ExtResource( 3 )]
+mouse_filter = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, 10 )
+position = Vector2( 134, 157 )
 z_index = 3
+collision_layer = 1
+
+[node name="Seedpacks" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Carrot_Seedpack" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 103, 230 )
+seed_type = 1
+d_file = "res://NutritionalInfos/carrotInfos/json/carrot_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Carrot_Seedpack" index="0"]
+texture = ExtResource( 12 )
+
+[node name="Carrot_Seedpack2" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 87, 188 )
+seed_type = 1
+d_file = "res://NutritionalInfos/carrotInfos/json/carrot_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Carrot_Seedpack2" index="0"]
+texture = ExtResource( 12 )
+
+[node name="Carrot_Seedpack3" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 575, 267 )
+seed_type = 1
+d_file = "res://NutritionalInfos/carrotInfos/json/carrot_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Carrot_Seedpack3" index="0"]
+texture = ExtResource( 12 )
+
+[node name="Carrot_Seedpack4" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 690, 480 )
+seed_type = 1
+d_file = "res://NutritionalInfos/carrotInfos/json/carrot_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Carrot_Seedpack4" index="0"]
+texture = ExtResource( 12 )
+
+[node name="Carrot_Seedpack5" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 590, 240 )
+seed_type = 1
+d_file = "res://NutritionalInfos/carrotInfos/json/carrot_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Carrot_Seedpack5" index="0"]
+texture = ExtResource( 12 )
+
+[node name="Tomato_Seedpack" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 46, 228 )
+seed_type = 2
+d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Tomato_Seedpack" index="0"]
+texture = ExtResource( 7 )
+
+[node name="Tomato_Seedpack2" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 604, 204 )
+seed_type = 2
+d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Tomato_Seedpack2" index="0"]
+texture = ExtResource( 7 )
+
+[node name="Tomato_Seedpack3" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 110, 48 )
+seed_type = 2
+d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Tomato_Seedpack3" index="0"]
+texture = ExtResource( 7 )
+
+[node name="Tomato_Seedpack4" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 115, 48 )
+seed_type = 2
+d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Tomato_Seedpack4" index="0"]
+texture = ExtResource( 7 )
+
+[node name="Tomato_Seedpack5" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 120, 48 )
+seed_type = 2
+d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Tomato_Seedpack5" index="0"]
+texture = ExtResource( 7 )
+
+[node name="Strawberry_Seedpack" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 211, 489 )
+seed_type = 3
+d_file = "res://NutritionalInfos/strawberryInfos/json/strawberry_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Strawberry_Seedpack" index="0"]
+texture = ExtResource( 8 )
+
+[node name="Strawberry_Seedpack2" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 728, 174 )
+seed_type = 3
+d_file = "res://NutritionalInfos/strawberryInfos/json/strawberry_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Strawberry_Seedpack2" index="0"]
+texture = ExtResource( 8 )
+
+[node name="Strawberry_Seedpack3" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 670, 480 )
+seed_type = 3
+d_file = "res://NutritionalInfos/strawberryInfos/json/strawberry_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Strawberry_Seedpack3" index="0"]
+texture = ExtResource( 8 )
+
+[node name="Strawberry_Seedpack4" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 680, 470 )
+seed_type = 3
+d_file = "res://NutritionalInfos/strawberryInfos/json/strawberry_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Strawberry_Seedpack4" index="0"]
+texture = ExtResource( 8 )
+
+[node name="Strawberry_Seedpack5" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 611, 267 )
+seed_type = 3
+d_file = "res://NutritionalInfos/strawberryInfos/json/strawberry_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Strawberry_Seedpack5" index="0"]
+texture = ExtResource( 8 )
+
+[node name="Pumpkin_Seedpack" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 209, 541 )
+seed_type = 4
+d_file = "res://NutritionalInfos/pumpkinInfos/json/pumpkin_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Pumpkin_Seedpack" index="0"]
+texture = ExtResource( 11 )
+
+[node name="Pumpkin_Seedpack2" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 711, 198 )
+seed_type = 4
+d_file = "res://NutritionalInfos/pumpkinInfos/json/pumpkin_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Pumpkin_Seedpack2" index="0"]
+texture = ExtResource( 11 )
+
+[node name="Pumpkin_Seedpack3" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 711, 270 )
+seed_type = 4
+d_file = "res://NutritionalInfos/pumpkinInfos/json/pumpkin_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Pumpkin_Seedpack3" index="0"]
+texture = ExtResource( 11 )
+
+[node name="Pumpkin_Seedpack4" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 740, 240 )
+seed_type = 4
+d_file = "res://NutritionalInfos/pumpkinInfos/json/pumpkin_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Pumpkin_Seedpack4" index="0"]
+texture = ExtResource( 11 )
+
+[node name="Pumpkin_Seedpack5" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 750, 280 )
+seed_type = 4
+d_file = "res://NutritionalInfos/pumpkinInfos/json/pumpkin_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Pumpkin_Seedpack5" index="0"]
+texture = ExtResource( 11 )
+
+[node name="Corn_Seedpack" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 572, 207 )
+seed_type = 5
+d_file = "res://NutritionalInfos/cornInfos/json/corn_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Corn_Seedpack" index="0"]
+texture = ExtResource( 10 )
+
+[node name="Corn_Seedpack2" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 155, 497 )
+seed_type = 5
+d_file = "res://NutritionalInfos/cornInfos/json/corn_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Corn_Seedpack2" index="0"]
+texture = ExtResource( 10 )
+
+[node name="Corn_Seedpack3" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 100, 46 )
+seed_type = 5
+d_file = "res://NutritionalInfos/cornInfos/json/corn_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Corn_Seedpack3" index="0"]
+texture = ExtResource( 10 )
+
+[node name="Corn_Seedpack4" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 60, 280 )
+seed_type = 5
+d_file = "res://NutritionalInfos/cornInfos/json/corn_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Corn_Seedpack4" index="0"]
+texture = ExtResource( 10 )
+
+[node name="Corn_Seedpack5" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 232, 290 )
+seed_type = 5
+d_file = "res://NutritionalInfos/cornInfos/json/corn_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Corn_Seedpack5" index="0"]
+texture = ExtResource( 10 )
+
+[node name="Lettuce_Seedpack" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 242, 216 )
+seed_type = 6
+d_file = "res://NutritionalInfos/lettuceInfos/json/lettuce_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Lettuce_Seedpack" index="0"]
+texture = ExtResource( 9 )
+
+[node name="Lettuce_Seedpack2" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 95, 452 )
+seed_type = 6
+d_file = "res://NutritionalInfos/lettuceInfos/json/lettuce_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Lettuce_Seedpack2" index="0"]
+texture = ExtResource( 9 )
+
+[node name="Lettuce_Seedpack3" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 694, 456 )
+seed_type = 6
+d_file = "res://NutritionalInfos/lettuceInfos/json/lettuce_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Lettuce_Seedpack3" index="0"]
+texture = ExtResource( 9 )
+
+[node name="Lettuce_Seedpack4" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 664, 458 )
+seed_type = 6
+d_file = "res://NutritionalInfos/lettuceInfos/json/lettuce_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Lettuce_Seedpack4" index="0"]
+texture = ExtResource( 9 )
+
+[node name="Lettuce_Seedpack5" parent="Seedpacks" instance=ExtResource( 6 )]
+position = Vector2( 297, 586 )
+seed_type = 6
+d_file = "res://NutritionalInfos/lettuceInfos/json/lettuce_dialogue.json"
+
+[node name="Sprite" parent="Seedpacks/Lettuce_Seedpack5" index="0"]
+texture = ExtResource( 9 )
+
+[connection signal="body_entered" from="ui_canvas/InventoryToolbar/AreaToolbar" to="ui_canvas" method="_on_AreaToolbar_body_entered"]
+[connection signal="body_exited" from="ui_canvas/InventoryToolbar/AreaToolbar" to="ui_canvas" method="_on_AreaToolbar_body_exited"]
+
+[editable path="ui_canvas/InventoryToolbar"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot1"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot2"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot3"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot4"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot5"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot6"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot7"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot8"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot9"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot10"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot11"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot12"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot13"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot14"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot15"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot16"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot17"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot18"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot19"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot20"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot21"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot22"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot23"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot24"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot25"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot26"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot27"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot28"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot29"]
+[editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot30"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot1"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot2"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot3"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot4"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot5"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot6"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot7"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot8"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot9"]
+[editable path="ui_canvas/InventoryToolbar/ToolBar/Container/Slot10"]
+[editable path="Seedpacks/Carrot_Seedpack"]
+[editable path="Seedpacks/Carrot_Seedpack2"]
+[editable path="Seedpacks/Carrot_Seedpack3"]
+[editable path="Seedpacks/Carrot_Seedpack4"]
+[editable path="Seedpacks/Carrot_Seedpack5"]
+[editable path="Seedpacks/Tomato_Seedpack"]
+[editable path="Seedpacks/Tomato_Seedpack2"]
+[editable path="Seedpacks/Tomato_Seedpack3"]
+[editable path="Seedpacks/Tomato_Seedpack4"]
+[editable path="Seedpacks/Tomato_Seedpack5"]
+[editable path="Seedpacks/Strawberry_Seedpack"]
+[editable path="Seedpacks/Strawberry_Seedpack2"]
+[editable path="Seedpacks/Strawberry_Seedpack3"]
+[editable path="Seedpacks/Strawberry_Seedpack4"]
+[editable path="Seedpacks/Strawberry_Seedpack5"]
+[editable path="Seedpacks/Pumpkin_Seedpack"]
+[editable path="Seedpacks/Pumpkin_Seedpack2"]
+[editable path="Seedpacks/Pumpkin_Seedpack3"]
+[editable path="Seedpacks/Pumpkin_Seedpack4"]
+[editable path="Seedpacks/Pumpkin_Seedpack5"]
+[editable path="Seedpacks/Corn_Seedpack"]
+[editable path="Seedpacks/Corn_Seedpack2"]
+[editable path="Seedpacks/Corn_Seedpack3"]
+[editable path="Seedpacks/Corn_Seedpack4"]
+[editable path="Seedpacks/Corn_Seedpack5"]
+[editable path="Seedpacks/Lettuce_Seedpack"]
+[editable path="Seedpacks/Lettuce_Seedpack2"]
+[editable path="Seedpacks/Lettuce_Seedpack3"]
+[editable path="Seedpacks/Lettuce_Seedpack4"]
+[editable path="Seedpacks/Lettuce_Seedpack5"]

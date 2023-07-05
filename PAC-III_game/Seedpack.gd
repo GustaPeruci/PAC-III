@@ -1,25 +1,10 @@
 extends Area2D
 
-func _on_Carrot_seed_body_entered(body):
-	if body.ui_canvas.add_item_inventory($Sprite.texture):
-		queue_free()
+export var seed_type = 0
+export(String, FILE, "*.json") var d_file
 
-func _on_Tomato_seed_body_entered(body):
-	if body.ui_canvas.add_item_inventory($Sprite.texture):
-		queue_free()
-
-func _on_Strawberry_seed_body_entered(body):
-	if body.ui_canvas.add_item_inventory($Sprite.texture):
-		queue_free()
-
-func _on_Pumpkin_seed_body_entered(body):
-	if body.ui_canvas.add_item_inventory($Sprite.texture):
-		queue_free()
-
-#func _on_Lettuce_seed_body_entered(body):
-#	if body.ui_canvas.add_item_inventory($Sprite.texture):
-#		queue_free()
-
-#func _on_Corn_seed_body_entered(body):
-#	if body.ui_canvas.add_item_inventory($Sprite.texture):
-#		queue_free()
+func _on_Seedpack_body_entered(body):
+	if body.name == "Player":
+		var ui_canvas = body.ui_canvas
+		if ui_canvas.add_item_inventory($Sprite.texture, d_file, seed_type):
+			queue_free()
