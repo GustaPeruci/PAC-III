@@ -35,6 +35,7 @@ margin_bottom = 6.98
 align = 2
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )

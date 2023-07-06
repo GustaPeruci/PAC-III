@@ -78,7 +78,6 @@ func get_drag_data(position: Vector2):
 	
 	var preview = self.duplicate()
 	preview.get_node("amount").hide()
-	preview.get_node("sprite").rect_position = Vector2(0,0)
 	
 	set_empty_slot()
 	set_drag_preview(preview)

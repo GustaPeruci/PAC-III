@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://tilsetGround/new_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Tilesets/Basic Furniture.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Tilesets/Chest.png" type="Texture" id=10]
 [ext_resource path="res://growingzone.tscn" type="PackedScene" id=11]
 [ext_resource path="res://gatinho sentadinho.tscn" type="PackedScene" id=12]
+[ext_resource path="res://gatinho deitadinho.tscn" type="PackedScene" id=13]
 [ext_resource path="res://letter.tscn" type="PackedScene" id=19]
 [ext_resource path="res://chicken.tscn" type="PackedScene" id=20]
 [ext_resource path="res://cow.tscn" type="PackedScene" id=21]
@@ -1044,9 +1045,6 @@ z_index = 99
 position = Vector2( 580, 108 )
 z_index = 99
 
-[node name="gatinho sentadinho" parent="." instance=ExtResource( 12 )]
-position = Vector2( 108, 100 )
-z_index = 99
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 37, 63 )

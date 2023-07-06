@@ -203,7 +203,7 @@ animations = [ {
 } ]
 
 [node name="growingzone" type="StaticBody2D"]
-z_index = 2
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="hoedland" type="AnimatedSprite" parent="."]

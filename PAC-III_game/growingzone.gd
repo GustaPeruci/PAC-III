@@ -8,6 +8,7 @@ var ui_canvas
 var texture
 
 func _ready():
+	plant = 0
 	main = get_parent().get_parent()
 	ui_canvas = main.get_node("ui_canvas")
 	
