@@ -36,6 +36,12 @@ position = Vector2( 134, 157 )
 z_index = 3
 collision_layer = 1
 
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+smoothing_enabled = true
+smoothing_speed = 10.0
+
 [node name="Seedpacks" type="Node2D" parent="."]
 z_index = 1
 
