@@ -2,7 +2,7 @@
 
 [ext_resource path="res://PressStart2P.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://fotoFundo.png" type="Texture" id=2]
-[ext_resource path="res://enter.png" type="Texture" id=3]
+[ext_resource path="res://inventario.png" type="Texture" id=3]
 [ext_resource path="res://teclado.png" type="Texture" id=4]
 [ext_resource path="res://mouse.png" type="Texture" id=5]
 [ext_resource path="res://ControlsScreen.gd" type="Script" id=6]
@@ -55,6 +55,11 @@ margin_right = -945.0
 margin_bottom = -452.5
 color = Color( 0.054902, 0.054902, 0.054902, 0.286275 )
 
+[node name="Inventario" type="Sprite" parent="FotoFundo/ColorRect"]
+position = Vector2( 1270, 481.5 )
+scale = Vector2( 0.547619, 0.414583 )
+texture = ExtResource( 3 )
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -71,11 +76,6 @@ position = Vector2( 675.75, 153.5 )
 scale = Vector2( 0.23806, 0.173469 )
 texture = ExtResource( 4 )
 
-[node name="Enter" type="Sprite" parent="Teclado"]
-position = Vector2( -44.2084, 775.833 )
-scale = Vector2( 1.1524, 1.28052 )
-texture = ExtResource( 3 )
-
 [node name="Label2" type="Label" parent="."]
 margin_left = 47.0
 margin_top = 149.0
@@ -86,22 +86,23 @@ custom_fonts/font = SubResource( 2 )
 text = "Mover a personagem:"
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 33.0
-margin_top = 282.0
-margin_right = 583.0
-margin_bottom = 307.0
+margin_left = 45.0
+margin_top = 286.0
+margin_right = 595.0
+margin_bottom = 311.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Interagir com objetos:"
+text = "Abrir inventário:"
 
 [node name="Label4" type="Label" parent="."]
 margin_left = 37.0
 margin_top = 449.0
-margin_right = 487.0
-margin_bottom = 474.0
+margin_right = 552.0
+margin_bottom = 510.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Plantar e colher:"
+text = "Plantar, colher e
+descrição sementes:"
 
 [node name="Mouse" type="Sprite" parent="."]
 position = Vector2( 676.5, 452.375 )
