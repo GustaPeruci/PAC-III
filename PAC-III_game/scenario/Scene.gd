@@ -5,6 +5,9 @@ var entered = false
 
 export (String) var scene_name = "scene"
 
+func _ready():
+	$StaticBody2D/Area2D.use_dialogue()
+
 func _process(delta):
 	if entered == true:
 		if Input.is_action_just_pressed("ui_accept"):

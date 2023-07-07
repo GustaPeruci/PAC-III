@@ -5,7 +5,7 @@ var invetory_size = Vector2(60,60)
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		$InventoryToolbar/Inventory.visible = not $InventoryToolbar/Inventory.visible
-		$InventoryToolbar/Infos.visible = not $InventoryToolbar/Infos.visible
+		$InventoryToolbar/Inventory/Infos.visible = not $InventoryToolbar/Inventory/Infos.visible
 		$Color.visible = not $Color.visible
 
 func add_item_inventory(sprite: Texture, d_file, seed_type) -> bool:

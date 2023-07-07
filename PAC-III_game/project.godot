@@ -21,7 +21,6 @@ Global="*res://global.gd"
 [display]
 
 window/size/width=820
-window/size/resizable=false
 
 [gui]
 

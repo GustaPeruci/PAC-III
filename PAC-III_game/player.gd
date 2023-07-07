@@ -33,6 +33,11 @@ func _physics_process(delta):
 		$Blusa.stop()
 		$Calca.stop()
 		$Sapato.stop()
+		$Corpo.frame = 0
+		$Cabelo.frame = 0
+		$Blusa.frame = 0
+		$Calca.frame = 0
+		$Sapato.frame = 0
 		
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)

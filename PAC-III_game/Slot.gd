@@ -4,6 +4,8 @@ var selected_slot: Control = null
 var in_area
 var d_file
 var infos
+var toolbar
+var inventory
 var seed_type
 var inventory_toolbar
 
@@ -13,7 +15,9 @@ func _ready():
 	connect("mouse_exited", self, "_on_mouse_exited")
 
 	inventory_toolbar = get_parent().get_parent().get_parent()
-	infos = inventory_toolbar.get_node("Infos")
+	infos = inventory_toolbar.get_node("Inventory/Infos")
+	toolbar = inventory_toolbar.get_node("ToolBar/Container")
+	inventory = inventory_toolbar.get_node("Inventory/Container")
 
 func _on_mouse_entered():
 	in_area = true
@@ -68,7 +72,7 @@ func _on_slot_clicked(button_index: int) -> void:
 
 
 func get_drag_data(position: Vector2):
-	var data := {
+	var data = {
 		"sprite" : $sprite.texture,
 		"amount" : $amount.text,
 		"d_file" : d_file,
@@ -109,3 +113,15 @@ func drop_data(position: Vector2, data) -> void:
 		seed_type = data.seed_type
 		$sprite.texture = data.sprite
 		$amount.text = data.amount
+		
+func get_selected_seed() -> int:
+	for slot_toolbar in toolbar.get_children():
+
+		if slot_toolbar.selected_slot:
+			return slot_toolbar.seed_type
+
+	for slot_inventory in inventory.get_children():
+		if slot_inventory.selected_slot:
+			return slot_inventory.seed_type
+			
+	return 0

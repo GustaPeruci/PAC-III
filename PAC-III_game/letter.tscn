@@ -51,4 +51,3 @@ position = Vector2( 0.5, 1.5 )
 shape = SubResource( 5 )
 
 [node name="Dialogue" parent="." instance=ExtResource( 2 )]
-visible = false
