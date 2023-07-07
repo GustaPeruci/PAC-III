@@ -37,6 +37,8 @@ z_index = 3
 collision_layer = 1
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
+pause_mode = 2
+physics_interpolation_mode = 1
 current = true
 zoom = Vector2( 0.25, 0.25 )
 smoothing_enabled = true
@@ -284,9 +286,6 @@ d_file = "res://NutritionalInfos/lettuceInfos/json/lettuce_dialogue.json"
 
 [node name="Sprite" parent="Seedpacks/Lettuce_Seedpack5" index="0"]
 texture = ExtResource( 9 )
-
-[connection signal="body_entered" from="ui_canvas/InventoryToolbar/AreaToolbar" to="ui_canvas" method="_on_AreaToolbar_body_entered"]
-[connection signal="body_exited" from="ui_canvas/InventoryToolbar/AreaToolbar" to="ui_canvas" method="_on_AreaToolbar_body_exited"]
 
 [editable path="ui_canvas/InventoryToolbar"]
 [editable path="ui_canvas/InventoryToolbar/Inventory/Container/Slot1"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Character/inventory.png" type="Texture" id=1]
 [ext_resource path="res://Slot.tscn" type="PackedScene" id=2]
@@ -6,20 +6,23 @@
 [ext_resource path="res://Character/ToolBar.png" type="Texture" id=4]
 [ext_resource path="res://Character/ArrowNext.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 316.5, 50.25 )
-
 [node name="InventoryToolbar" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -99.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -360.0
+margin_top = -300.0
+margin_right = 361.0
+margin_bottom = 300.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="Inventory" type="TextureRect" parent="."]
 visible = false
+margin_left = 50.0
 margin_top = 50.0
-margin_right = 606.0
+margin_right = 656.0
 margin_bottom = 382.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -477,11 +480,55 @@ margin_top = -25.0
 margin_right = 35.0
 margin_bottom = 35.0
 
+[node name="Infos" type="NinePatchRect" parent="Inventory"]
+anchor_left = 0.035
+anchor_top = 0.163
+anchor_right = 0.287
+anchor_bottom = 0.572
+margin_left = 3.79
+margin_top = -7.116
+margin_right = 31.078
+margin_bottom = 107.096
+script = ExtResource( 3 )
+
+[node name="SeedName" type="RichTextLabel" parent="Inventory/Infos"]
+anchor_top = 0.041
+anchor_right = 1.0
+anchor_bottom = 0.118
+margin_left = 2.5
+margin_top = 0.75
+margin_right = 3.5
+margin_bottom = 0.884998
+
+[node name="SeedInfo" type="RichTextLabel" parent="Inventory/Infos"]
+anchor_top = 0.163
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.75
+margin_bottom = -10.0
+
+[node name="NextButton" type="Button" parent="Inventory/Infos"]
+margin_left = 110.0
+margin_top = 220.0
+margin_right = 152.0
+margin_bottom = 256.0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="PreviewtButton" type="Button" parent="Inventory/Infos"]
+margin_left = 75.0
+margin_top = 256.0
+margin_right = 117.0
+margin_bottom = 292.0
+rect_rotation = 180.0
+icon = ExtResource( 5 )
+flat = true
+
 [node name="ToolBar" type="TextureRect" parent="."]
-margin_left = 85.0
-margin_top = 474.0
-margin_right = 719.0
-margin_bottom = 574.0
+margin_left = 50.0
+margin_top = 500.0
+margin_right = 684.0
+margin_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -658,60 +705,8 @@ margin_top = -25.0
 margin_right = 35.0
 margin_bottom = 35.0
 
-[node name="Infos" type="NinePatchRect" parent="."]
-anchor_left = 0.035
-anchor_top = 0.163
-anchor_right = 0.287
-anchor_bottom = 0.572
-margin_left = -0.235001
-margin_top = 0.199997
-margin_right = 0.072998
-margin_bottom = -0.200012
-script = ExtResource( 3 )
-
-[node name="SeedName" type="RichTextLabel" parent="Infos"]
-anchor_top = 0.041
-anchor_right = 1.0
-anchor_bottom = 0.118
-margin_top = -0.0450001
-margin_right = 1.0
-margin_bottom = 0.0899982
-
-[node name="SeedInfo" type="RichTextLabel" parent="Infos"]
-anchor_top = 0.163
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 0.0649986
-margin_bottom = -31.0
-
-[node name="NextButton" type="Button" parent="Infos"]
-visible = false
-margin_left = 110.0
-margin_top = 220.0
-margin_right = 152.0
-margin_bottom = 256.0
-icon = ExtResource( 5 )
-flat = true
-
-[node name="PreviewtButton" type="Button" parent="Infos"]
-visible = false
-margin_left = 75.0
-margin_top = 256.0
-margin_right = 117.0
-margin_bottom = 292.0
-rect_rotation = 180.0
-icon = ExtResource( 5 )
-flat = true
-
-[node name="AreaToolbar" type="Area2D" parent="."]
-position = Vector2( 85, 474 )
-
-[node name="CollisionToolbar" type="CollisionShape2D" parent="AreaToolbar"]
-position = Vector2( 316.5, 50.75 )
-shape = SubResource( 1 )
-
-[connection signal="pressed" from="Infos/NextButton" to="Infos" method="_on_NextButton_pressed"]
-[connection signal="pressed" from="Infos/PreviewtButton" to="Infos" method="_on_PreviewtButton_pressed"]
+[connection signal="pressed" from="Inventory/Infos/NextButton" to="Inventory/Infos" method="_on_NextButton_pressed"]
+[connection signal="pressed" from="Inventory/Infos/PreviewtButton" to="Inventory/Infos" method="_on_PreviewtButton_pressed"]
 
 [editable path="Inventory/Container/Slot1"]
 [editable path="Inventory/Container/Slot2"]

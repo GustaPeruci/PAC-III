@@ -6,12 +6,14 @@ var plant_grow = false
 var main 
 var ui_canvas
 var texture
+var slot
 
 func _ready():
 	plant = 0
 	main = get_parent().get_parent()
 	ui_canvas = main.get_node("ui_canvas")
-	
+	slot = ui_canvas.get_node("InventoryToolbar/Inventory/Container/Slot1")
+
 func _physics_process(delta):
 	if plantgrowing ==  false:
 		plant = Global.plantselected
@@ -204,6 +206,33 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				ui_canvas.add_item_inventory(texture, '', plant)
 			else:
 				pass
+		elif not plantgrowing:
+			plant = slot.get_selected_seed()
+			if plant == 1:
+				plantgrowing = true
+				$carrotgrowtimer.start()
+				$plant.play("carrotgrowing")
+			if plant == 2:
+				plantgrowing = true
+				$tomatogrowtimer.start()
+				$plant.play("tomatogrowing")
+			if plant == 3:
+				plantgrowing = true
+				$strawberrygrowtimer.start()
+				$plant.play("strawberrygrowing")
+			if plant == 4:
+				plantgrowing = true
+				$pumpkingrowtimer.start()
+				$plant.play("pumpkingrowing")
+			if plant == 5:
+				plantgrowing = true
+				$corngrowtimer.start()
+				$plant.play("corngrowing")
+			if plant == 6:
+				plantgrowing = true
+				$lettucegrowtimer.start()
+				$plant.play("lettucegrowing")
+			
 		print("number of carriots:" + str(Global.numofcarrots))
 		print("number of tomatos:" + str(Global.numoftomatos))
 		print("number of strawberry:" + str(Global.numofstrawberry))

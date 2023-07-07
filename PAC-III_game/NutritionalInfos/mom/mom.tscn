@@ -39,7 +39,7 @@ func next_script():
 	current_dialogue_id += 1
 	
 	if current_dialogue_id >= len(dialogue):
-		$Timer.start()
+#		$Timer.start()
 		$NinePatchRect.visible = false
 		return 
 	
@@ -60,10 +60,13 @@ script = SubResource( 3 )
 d_file = "res://NutritionalInfos/mom/json/dialogue_mom.json"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_left = -1.0
-margin_top = 381.0
-margin_right = 824.0
-margin_bottom = 575.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -412.5
+margin_top = -194.0
+margin_right = 412.5
 texture = ExtResource( 1 )
 region_rect = Rect2( 1.72697, 0.185218, 27.6223, 31.542 )
 patch_margin_left = 2
