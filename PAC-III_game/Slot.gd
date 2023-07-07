@@ -28,14 +28,32 @@ func _on_mouse_exited():
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_action_pressed("click") and event.button_index == BUTTON_LEFT and in_area:
-			_on_slot_clicked(BUTTON_LEFT)
-		elif event.is_action_pressed("click") and event.button_index == BUTTON_RIGHT and in_area:
-			_on_slot_clicked(BUTTON_RIGHT)
+			_on_slot_clicked()
+	if event is InputEventKey:
+		if Input.is_action_pressed("select_1"):
+			selected_slot = toolbar.get_node("Slot1")
+			toolbar.get_node("Slot1")._on_slot_clicked()
+		if Input.is_action_pressed("select_2"):
+			toolbar.get_node("Slot2")._on_slot_clicked()
+		if Input.is_action_pressed("select_3"):
+			toolbar.get_node("Slot3")._on_slot_clicked()
+		if Input.is_action_pressed("select_4"):
+			toolbar.get_node("Slot4")._on_slot_clicked()
+		if Input.is_action_pressed("select_5"):
+			toolbar.get_node("Slot5")._on_slot_clicked()
+		if Input.is_action_pressed("select_6"):
+			toolbar.get_node("Slot6")._on_slot_clicked()
+		if Input.is_action_pressed("select_7"):
+			toolbar.get_node("Slot7")._on_slot_clicked()
+		if Input.is_action_pressed("select_8"):
+			toolbar.get_node("Slot8")._on_slot_clicked()
+		if Input.is_action_pressed("select_9"):
+			toolbar.get_node("Slot9")._on_slot_clicked()
+		if Input.is_action_pressed("select_0"):
+			toolbar.get_node("Slot10")._on_slot_clicked()
 
-func _on_slot_clicked(button_index: int) -> void:
-	if $sprite.texture == null:
-		return
-	if button_index == BUTTON_LEFT:
+func _on_slot_clicked() -> void:
+	if $sprite.texture != null:		
 		if selected_slot == self:
 			# Deselecionar o slot atual
 			selected_slot = null
@@ -69,6 +87,8 @@ func _on_slot_clicked(button_index: int) -> void:
 				infos.get_node("PreviewtButton").visible = true
 			else:
 				infos.visible = false
+				
+	return
 
 
 func get_drag_data(position: Vector2):
@@ -97,7 +117,7 @@ func set_empty_slot() -> void:
 func can_drop_data(position: Vector2, data) -> bool:
 	return true
 
-func drop_data(position: Vector2, data) -> void:
+func drop_data(position: Vector2, data) -> void:	
 	if $sprite.texture == data.sprite:
 		var drop_item = int($amount.text)
 		drop_item += int(data.amount)
@@ -115,13 +135,45 @@ func drop_data(position: Vector2, data) -> void:
 		$amount.text = data.amount
 		
 func get_selected_seed() -> int:
+	var item
+	var slot_seed_type
 	for slot_toolbar in toolbar.get_children():
 
 		if slot_toolbar.selected_slot:
-			return slot_toolbar.seed_type
+			slot_seed_type = slot_toolbar.seed_type
+			item = (int(slot_toolbar.get_node("amount").text))-1
+			if item == 0:
+				slot_toolbar.get_node("sprite").texture = null				
+				slot_toolbar.get_node("amount").text = ''
+				slot_toolbar.seed_type = 0
+				slot_toolbar.d_file = null
+				slot_toolbar.selected_slot = null
+				
+				infos.clear_infos()
+				infos.get_node("NextButton").visible = false
+				infos.get_node("PreviewtButton").visible = false
+			else:	
+				slot_toolbar.get_node("amount").text = String(item)
+			
+			return slot_seed_type
 
 	for slot_inventory in inventory.get_children():
 		if slot_inventory.selected_slot:
-			return slot_inventory.seed_type
+			slot_seed_type = slot_inventory.seed_type
+			item = (int(slot_inventory.get_node("amount").text))-1
+			if item == 0:
+				slot_inventory.get_node("sprite").text = null				
+				slot_inventory.get_node("amount").text = ''
+				slot_inventory.seed_type = 0
+				slot_inventory.d_file = null
+				slot_inventory.selected_slot = null
+				
+				infos.clear_infos()
+				infos.get_node("NextButton").visible = false
+				infos.get_node("PreviewtButton").visible = false
+			else:	
+				slot_inventory.get_node("amount").text = String(item)
+				
+			return slot_seed_type
 			
 	return 0
