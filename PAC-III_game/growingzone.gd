@@ -233,9 +233,13 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				$lettucegrowtimer.start()
 				$plant.play("lettucegrowing")
 			
+				
 		print("number of carriots:" + str(Global.numofcarrots))
 		print("number of tomatos:" + str(Global.numoftomatos))
 		print("number of strawberry:" + str(Global.numofstrawberry))
 		print("number of pumpkin:" + str(Global.numofpumpkin))
 		print("number of corns:" + str(Global.numofcorns))
 		print("number of lettuces:" + str(Global.numoflettuces))
+		
+		if Global.numofcarrots >= 5 and Global.numoftomatos >= 5 and Global.numofstrawberry >= 5 and Global.numofpumpkin >= 5 and Global.numofcorns >= 5 and Global.numoflettuces >= 5:
+			get_tree().change_scene("res://EndScreen.tscn")

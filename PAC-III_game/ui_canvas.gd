@@ -50,14 +50,4 @@ func add_item_inventory(sprite: Texture, d_file, seed_type) -> bool:
 			return true
 
 	return false
-
-func remove_item_inventory(sprite: Texture):
-	pass
-
-func _on_AreaToolbar_body_entered(body):
-	if body.name == "Player":
-		$InventoryToolbar/ToolBar.rect_position = Vector2(85,5)
-
-func _on_AreaToolbar_body_exited(body):
-	if body.name == "Player":
-		$InventoryToolbar/ToolBar.rect_position = Vector2(85,474)
+	
