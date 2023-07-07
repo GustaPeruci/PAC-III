@@ -7,6 +7,7 @@ export (String) var scene_name = "scene"
 
 func _ready():
 	$StaticBody2D/Area2D.use_dialogue()
+	$music.play()
 
 func _process(delta):
 	if entered == true:

@@ -104,7 +104,7 @@ d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
 texture = ExtResource( 7 )
 
 [node name="Tomato_Seedpack3" parent="Seedpacks" instance=ExtResource( 6 )]
-position = Vector2( 110, 48 )
+position = Vector2( 662, 72 )
 seed_type = 2
 d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
 
@@ -112,7 +112,7 @@ d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
 texture = ExtResource( 7 )
 
 [node name="Tomato_Seedpack4" parent="Seedpacks" instance=ExtResource( 6 )]
-position = Vector2( 115, 48 )
+position = Vector2( 732, 9 )
 seed_type = 2
 d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
 
@@ -120,7 +120,7 @@ d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
 texture = ExtResource( 7 )
 
 [node name="Tomato_Seedpack5" parent="Seedpacks" instance=ExtResource( 6 )]
-position = Vector2( 120, 48 )
+position = Vector2( 537, 119 )
 seed_type = 2
 d_file = "res://NutritionalInfos/tomatoInfos/json/tomato_dialogue.json"
 
@@ -224,7 +224,7 @@ d_file = "res://NutritionalInfos/cornInfos/json/corn_dialogue.json"
 texture = ExtResource( 10 )
 
 [node name="Corn_Seedpack3" parent="Seedpacks" instance=ExtResource( 6 )]
-position = Vector2( 100, 46 )
+position = Vector2( 536, 34 )
 seed_type = 5
 d_file = "res://NutritionalInfos/cornInfos/json/corn_dialogue.json"
 
